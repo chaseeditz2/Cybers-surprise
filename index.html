@@ -1,0 +1,1197 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Final Act — Cyberwall</title>
+
+    <meta
+        name="description"
+        content="A birthday escape room created for Cyberwall."
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         BACKGROUND EFFECTS
+    ========================================================== -->
+
+    <div class="background-effects" aria-hidden="true">
+        <div class="storm-glow"></div>
+        <div class="rain rain-one"></div>
+        <div class="rain rain-two"></div>
+        <div class="rain rain-three"></div>
+        <div class="lightning"></div>
+    </div>
+
+
+    <!-- =========================================================
+         TOP BAR
+    ========================================================== -->
+
+    <header class="topbar">
+
+        <button class="brand home-link" type="button">
+            <span class="brand-symbol">✦</span>
+            <span>THE FINAL ACT</span>
+        </button>
+
+        <div class="topbar-right">
+
+            <div class="weather-indicator">
+                <span class="status-dot"></span>
+                <span>STORM WATCH</span>
+            </div>
+
+            <button
+                class="sound-button"
+                id="sound-button"
+                type="button"
+                aria-label="Toggle sound"
+            >
+                SOUND: OFF
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         OPENING SCREEN
+    ========================================================== -->
+
+    <main>
+
+        <section
+            id="opening-screen"
+            class="screen active"
+        >
+
+            <div class="curtain curtain-left"></div>
+            <div class="curtain curtain-right"></div>
+
+            <div class="opening-content">
+
+                <p class="eyebrow">
+                    A BIRTHDAY ESCAPE ROOM
+                </p>
+
+                <div class="theater-emblem">
+                    <span>✦</span>
+                </div>
+
+                <div class="gold-divider"></div>
+
+                <h1>
+                    THE FINAL ACT
+                </h1>
+
+                <p class="dedication">
+                    A birthday escape room for
+                </p>
+
+                <h2 class="birthday-name">
+                    CYBERWALL
+                </h2>
+
+                <p class="opening-description">
+                    The theater is waiting.
+                    <br>
+                    The storm is approaching.
+                    <br>
+                    And somewhere behind the curtain,
+                    <br>
+                    the final act is about to begin.
+                </p>
+
+                <button
+                    id="enter-button"
+                    class="primary-button"
+                    type="button"
+                >
+                    <span>ENTER THE THEATER</span>
+                    <span class="button-arrow">→</span>
+                </button>
+
+                <p class="opening-footnote">
+                    Four acts. One mystery. Fifteen letters.
+                </p>
+
+                <p class="opening-weather">
+                    ◉ CURRENT CONDITIONS:
+                    <span>UNSETTLED</span>
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             GAME SCREEN
+        ====================================================== -->
+
+        <section
+            id="game-screen"
+            class="screen"
+        >
+
+            <div class="game-layout">
+
+
+                <!-- =================================================
+                     SIDEBAR
+                ================================================== -->
+
+                <aside class="sidebar">
+
+                    <div class="sidebar-header">
+
+                        <div class="sidebar-mark">
+                            ✦
+                        </div>
+
+                        <div>
+                            <p class="sidebar-heading">
+                                THE FINAL ACT
+                            </p>
+
+                            <p class="sidebar-subheading">
+                                CYBERWALL'S BIRTHDAY
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <nav class="room-navigation">
+
+                        <button
+                            class="nav-button active"
+                            data-room="lobby"
+                            type="button"
+                        >
+                            <span class="nav-number">I</span>
+                            <span>
+                                <strong>THE LOBBY</strong>
+                                <small>ACT I</small>
+                            </span>
+                        </button>
+
+
+                        <button
+                            class="nav-button locked"
+                            data-room="stage"
+                            type="button"
+                            disabled
+                        >
+                            <span class="nav-number">II</span>
+                            <span>
+                                <strong>THE STAGE</strong>
+                                <small>ACT II</small>
+                            </span>
+                            <span class="lock">🔒</span>
+                        </button>
+
+
+                        <button
+                            class="nav-button locked"
+                            data-room="weather"
+                            type="button"
+                            disabled
+                        >
+                            <span class="nav-number">III</span>
+                            <span>
+                                <strong>THE STORM</strong>
+                                <small>ACT III</small>
+                            </span>
+                            <span class="lock">🔒</span>
+                        </button>
+
+
+                        <button
+                            class="nav-button locked"
+                            data-room="loki"
+                            type="button"
+                            disabled
+                        >
+                            <span class="nav-number">IV</span>
+                            <span>
+                                <strong>LOKI</strong>
+                                <small>ACT IV</small>
+                            </span>
+                            <span class="lock">🔒</span>
+                        </button>
+
+
+                        <div class="nav-divider"></div>
+
+
+                        <button
+                            class="nav-button locked"
+                            data-room="letters1"
+                            type="button"
+                            disabled
+                        >
+                            <span class="nav-number">✉</span>
+                            <span>
+                                <strong>LETTERS I</strong>
+                                <small>THE MESSAGES</small>
+                            </span>
+                            <span class="lock">🔒</span>
+                        </button>
+
+
+                        <button
+                            class="nav-button locked"
+                            data-room="letters2"
+                            type="button"
+                            disabled
+                        >
+                            <span class="nav-number">✉</span>
+                            <span>
+                                <strong>LETTERS II</strong>
+                                <small>THE MESSAGES</small>
+                            </span>
+                            <span class="lock">🔒</span>
+                        </button>
+
+
+                        <button
+                            class="nav-button locked"
+                            data-room="finale"
+                            type="button"
+                            disabled
+                        >
+                            <span class="nav-number">★</span>
+                            <span>
+                                <strong>THE FINAL ACT</strong>
+                                <small>FINALE</small>
+                            </span>
+                            <span class="lock">🔒</span>
+                        </button>
+
+                    </nav>
+
+
+                    <div class="sidebar-footer">
+
+                        <div class="sidebar-progress-label">
+                            <span>PROGRESS</span>
+                            <span id="progress-text">0 / 4 ACTS</span>
+                        </div>
+
+                        <div class="sidebar-progress">
+                            <div
+                                id="progress-bar"
+                                class="sidebar-progress-fill"
+                            ></div>
+                        </div>
+
+                        <p>
+                            Something is waiting
+                            behind the final curtain.
+                        </p>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- =================================================
+                     ROOM AREA
+                ================================================== -->
+
+                <div class="room-area">
+
+
+                    <div class="room-topline">
+
+                        <div>
+                            <span class="room-topline-label">
+                                CURRENT ACT
+                            </span>
+
+                            <strong id="room-act">
+                                ACT I — THE LOBBY
+                            </strong>
+                        </div>
+
+                        <div class="room-topline-status">
+                            <span class="status-dot"></span>
+                            SYSTEM ONLINE
+                        </div>
+
+                    </div>
+
+
+                    <!-- =============================================
+                         ACT I — LOBBY
+                    ============================================== -->
+
+                    <section
+                        id="room-lobby"
+                        class="room active"
+                    >
+
+                        <div class="room-heading">
+
+                            <p class="room-kicker">
+                                ACT I
+                            </p>
+
+                            <h2>
+                                THE LOBBY
+                            </h2>
+
+                            <p>
+                                The theater has been waiting for you.
+                                Look around. Something here is trying
+                                to tell you how the story begins.
+                            </p>
+
+                        </div>
+
+
+                        <div class="lobby-scene">
+
+                            <div class="marquee">
+                                <span>WELCOME TO THE FINAL ACT</span>
+                            </div>
+
+
+                            <div class="interactive-grid">
+
+                                <button
+                                    class="interactable"
+                                    data-clue="radio"
+                                    type="button"
+                                >
+                                    <span class="object-icon">📻</span>
+                                    <strong>THE RADIO</strong>
+                                    <small>
+                                        A strange signal is coming
+                                        through the static.
+                                    </small>
+                                </button>
+
+
+                                <button
+                                    class="interactable"
+                                    data-clue="poster"
+                                    type="button"
+                                >
+                                    <span class="object-icon">🎭</span>
+                                    <strong>THE POSTER</strong>
+                                    <small>
+                                        An old show poster hangs
+                                        beneath the lights.
+                                    </small>
+                                </button>
+
+
+                                <button
+                                    class="interactable"
+                                    data-clue="symbol"
+                                    type="button"
+                                >
+                                    <span class="object-icon">ᛉ</span>
+                                    <strong>THE SYMBOL</strong>
+                                    <small>
+                                        Someone left a strange mark
+                                        on the theater wall.
+                                    </small>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="puzzle-panel">
+
+                            <div class="puzzle-panel-header">
+
+                                <span>
+                                    THE FIRST LOCK
+                                </span>
+
+                                <span>
+                                    ◆
+                                </span>
+
+                            </div>
+
+                            <h3>
+                                What word opens the theater?
+                            </h3>
+
+                            <p>
+                                Search the three clues around the lobby.
+                                They point toward the answer.
+                            </p>
+
+                            <div class="answer-area">
+
+                                <input
+                                    id="answer-lobby"
+                                    type="text"
+                                    autocomplete="off"
+                                    placeholder="Enter your answer..."
+                                >
+
+                                <button
+                                    class="solve-button"
+                                    data-puzzle="lobby"
+                                    type="button"
+                                >
+                                    UNLOCK
+                                </button>
+
+                            </div>
+
+                            <p
+                                id="feedback-lobby"
+                                class="puzzle-feedback"
+                            ></p>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =============================================
+                         ACT II — STAGE
+                    ============================================== -->
+
+                    <section
+                        id="room-stage"
+                        class="room"
+                    >
+
+                        <div class="room-heading">
+
+                            <p class="room-kicker">
+                                ACT II
+                            </p>
+
+                            <h2>
+                                THE STAGE
+                            </h2>
+
+                            <p>
+                                The curtain has opened.
+                                But the stage isn't empty.
+                                Something is waiting beneath
+                                the spotlight.
+                            </p>
+
+                        </div>
+
+
+                        <div class="stage-scene">
+
+                            <div class="stage-curtains">
+                                <div></div>
+                                <div></div>
+                            </div>
+
+                            <div class="stage-spotlight"></div>
+
+                            <div class="stage-platform">
+
+                                <div class="stage-mask">
+                                    <span>🎭</span>
+                                </div>
+
+                                <div class="stage-symbol">
+                                    ✦
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="puzzle-panel">
+
+                            <div class="puzzle-panel-header">
+                                <span>THE SECOND LOCK</span>
+                                <span>◆</span>
+                            </div>
+
+                            <h3>
+                                What color belongs beneath the spotlight?
+                            </h3>
+
+                            <p>
+                                The theater remembers its oldest
+                                tradition. Think about what a spotlight
+                                reveals when everything else is dark.
+                            </p>
+
+                            <div class="answer-area">
+
+                                <input
+                                    id="answer-stage"
+                                    type="text"
+                                    autocomplete="off"
+                                    placeholder="Enter your answer..."
+                                >
+
+                                <button
+                                    class="solve-button"
+                                    data-puzzle="stage"
+                                    type="button"
+                                >
+                                    UNLOCK
+                                </button>
+
+                            </div>
+
+                            <p
+                                id="feedback-stage"
+                                class="puzzle-feedback"
+                            ></p>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =============================================
+                         ACT III — WEATHER
+                    ============================================== -->
+
+                    <section
+                        id="room-weather"
+                        class="room"
+                    >
+
+                        <div class="room-heading">
+
+                            <p class="room-kicker">
+                                ACT III
+                            </p>
+
+                            <h2>
+                                THE STORM
+                            </h2>
+
+                            <p>
+                                The theater is shaking.
+                                The radar has come alive.
+                                Somewhere inside the storm
+                                is the next clue.
+                            </p>
+
+                        </div>
+
+
+                        <div class="radar-panel">
+
+                            <div class="radar-header">
+
+                                <div>
+                                    <strong>
+                                        WEATHER RADAR
+                                    </strong>
+
+                                    <small>
+                                        CENTRAL OKLAHOMA
+                                    </small>
+                                </div>
+
+                                <span class="radar-live">
+                                    ● LIVE
+                                </span>
+
+                            </div>
+
+
+                            <div class="radar-display">
+
+                                <div class="radar-rings">
+
+                                    <div class="radar-ring ring-one"></div>
+                                    <div class="radar-ring ring-two"></div>
+                                    <div class="radar-ring ring-three"></div>
+
+                                    <div class="radar-sweep"></div>
+
+                                    <div class="storm-cell cell-one"></div>
+                                    <div class="storm-cell cell-two"></div>
+                                    <div class="storm-cell cell-three"></div>
+
+                                    <div class="radar-center">
+                                        +
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="radar-footer">
+
+                                <span>
+                                    LAT 35.4676° N
+                                </span>
+
+                                <span>
+                                    LON 97.5164° W
+                                </span>
+
+                                <span>
+                                    TOR: POSSIBLE
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="puzzle-panel">
+
+                            <div class="puzzle-panel-header">
+                                <span>THE THIRD LOCK</span>
+                                <span>◆</span>
+                            </div>
+
+                            <h3>
+                                The storm has left a number behind.
+                            </h3>
+
+                            <p>
+                                Three numbers. One sequence.
+                                Read the radar carefully.
+                            </p>
+
+                            <div class="answer-area">
+
+                                <input
+                                    id="answer-weather"
+                                    type="text"
+                                    autocomplete="off"
+                                    placeholder="Enter the sequence..."
+                                >
+
+                                <button
+                                    class="solve-button"
+                                    data-puzzle="weather"
+                                    type="button"
+                                >
+                                    UNLOCK
+                                </button>
+
+                            </div>
+
+                            <p
+                                id="feedback-weather"
+                                class="puzzle-feedback"
+                            ></p>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =============================================
+                         ACT IV — LOKI
+                    ============================================== -->
+
+                    <section
+                        id="room-loki"
+                        class="room"
+                    >
+
+                        <div class="room-heading">
+
+                            <p class="room-kicker">
+                                ACT IV
+                            </p>
+
+                            <h2>
+                                LOKI
+                            </h2>
+
+                            <p>
+                                The storm has gone silent.
+                                A final figure waits beyond the radar.
+                                Not everything you see can be trusted.
+                            </p>
+
+                        </div>
+
+
+                        <div class="loki-scene">
+
+                            <div class="loki-symbol">
+                                ᛚ
+                            </div>
+
+                            <div class="loki-quote">
+                                “The truth is rarely the first thing
+                                you see.”
+                            </div>
+
+                            <div class="inscription">
+                                THE GOD OF MISCHIEF
+                            </div>
+
+                            <div class="loki-signature">
+                                — LOKI
+                            </div>
+
+                        </div>
+
+
+                        <div class="puzzle-panel">
+
+                            <div class="puzzle-panel-header">
+                                <span>THE FINAL LOCK</span>
+                                <span>◆</span>
+                            </div>
+
+                            <h3>
+                                What is Loki hiding?
+                            </h3>
+
+                            <p>
+                                The theater has shown you storms,
+                                masks and illusions.
+                                The final answer is simpler than it appears.
+                            </p>
+
+                            <div class="answer-area">
+
+                                <input
+                                    id="answer-loki"
+                                    type="text"
+                                    autocomplete="off"
+                                    placeholder="Enter your answer..."
+                                >
+
+                                <button
+                                    class="solve-button"
+                                    data-puzzle="loki"
+                                    type="button"
+                                >
+                                    UNLOCK
+                                </button>
+
+                            </div>
+
+                            <p
+                                id="feedback-loki"
+                                class="puzzle-feedback"
+                            ></p>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =============================================
+                         LETTERS I
+                    ============================================== -->
+
+                    <section
+                        id="room-letters1"
+                        class="room"
+                    >
+
+                        <div class="room-heading">
+
+                            <p class="room-kicker">
+                                THE LETTERS
+                            </p>
+
+                            <h2>
+                                LETTERS I
+                            </h2>
+
+                            <p>
+                                The mystery is over.
+                                Now the people behind the curtain
+                                have something to say.
+                            </p>
+
+                        </div>
+
+
+                        <div class="letter-room-art">
+
+                            <div class="vanity">
+                                ✉
+                            </div>
+
+                            <p class="letter-intro">
+                                Eight envelopes wait beneath the
+                                theater lights.
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            id="letters-grid-1"
+                            class="letters-grid"
+                        >
+                            <!-- Letters generated by script.js -->
+                        </div>
+
+                    </section>
+
+
+                    <!-- =============================================
+                         LETTERS II
+                    ============================================== -->
+
+                    <section
+                        id="room-letters2"
+                        class="room"
+                    >
+
+                        <div class="room-heading">
+
+                            <p class="room-kicker">
+                                THE LETTERS
+                            </p>
+
+                            <h2>
+                                LETTERS II
+                            </h2>
+
+                            <p>
+                                Seven more messages remain.
+                                The final curtain is getting closer.
+                            </p>
+
+                        </div>
+
+
+                        <div class="letter-room-art">
+
+                            <div class="vanity">
+                                ✉
+                            </div>
+
+                            <p class="letter-intro">
+                                Seven final envelopes remain.
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            id="letters-grid-2"
+                            class="letters-grid"
+                        >
+                            <!-- Letters generated by script.js -->
+                        </div>
+
+                    </section>
+
+
+                    <!-- =============================================
+                         FINALE
+                    ============================================== -->
+
+                    <section
+                        id="room-finale"
+                        class="room"
+                    >
+
+                        <div class="finale-content">
+
+                            <div class="finale-star">
+                                ★
+                            </div>
+
+                            <p class="room-kicker">
+                                THE FINAL ACT
+                            </p>
+
+                            <h2>
+                                THE CURTAIN FALLS
+                            </h2>
+
+                            <div class="finale-message">
+
+                                <p>
+                                    Cyberwall,
+                                </p>
+
+                                <p>
+                                    You made it all the way through.
+                                </p>
+
+                                <p>
+                                    Behind every puzzle, every storm,
+                                    every strange clue and every letter
+                                    was one simple reason for this little
+                                    adventure:
+                                </p>
+
+                                <h3>
+                                    HAPPY BIRTHDAY.
+                                </h3>
+
+                                <p>
+                                    From everyone who helped make
+                                    Escalation what it is —
+                                    thank you for being you.
+                                </p>
+
+                                <p>
+                                    Now the theater can finally rest.
+                                </p>
+
+                            </div>
+
+
+                            <div class="finale-card">
+
+                                <span>
+                                    THE FINAL ACT
+                                </span>
+
+                                <strong>
+                                    HAPPY BIRTHDAY, CYBERWALL
+                                </strong>
+
+                                <small>
+                                    END OF SHOW
+                                </small>
+
+                            </div>
+
+
+                            <p class="finale-small">
+                                The lights are going down...
+                                but the memories stay.
+                            </p>
+
+
+                            <button
+                                id="replay-button"
+                                class="primary-button"
+                                type="button"
+                            >
+                                <span>REPLAY THE EXPERIENCE</span>
+                                <span class="button-arrow">↻</span>
+                            </button>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =============================================
+                         ROOM FOOTER
+                    ============================================== -->
+
+                    <footer class="room-footer">
+
+                        <span>
+                            THE FINAL ACT
+                        </span>
+
+                        <span>
+                            •
+                        </span>
+
+                        <span>
+                            A BIRTHDAY EXPERIENCE FOR CYBERWALL
+                        </span>
+
+                        <button
+                            class="home-link footer-home"
+                            type="button"
+                        >
+                            RETURN TO LOBBY
+                        </button>
+
+                    </footer>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         CLUE MODAL
+    ========================================================== -->
+
+    <div
+        id="clue-modal"
+        class="modal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-backdrop"
+            data-close-modal="clue"
+        ></div>
+
+        <div
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
+        >
+
+            <button
+                id="close-clue"
+                class="modal-close"
+                type="button"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+            <p class="modal-kicker">
+                THEATER CLUE
+            </p>
+
+            <h2 id="modal-title">
+                Clue
+            </h2>
+
+            <div class="letter-divider"></div>
+
+            <p id="modal-text">
+                Something is hidden here...
+            </p>
+
+            <button
+                id="modal-done"
+                class="primary-button modal-button"
+                type="button"
+            >
+                CLOSE CLUE
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         LETTER MODAL
+    ========================================================== -->
+
+    <div
+        id="letter-modal"
+        class="modal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-backdrop"
+            data-close-modal="letter"
+        ></div>
+
+        <div
+            class="modal-card letter-modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="letter-name"
+        >
+
+            <button
+                id="close-letter"
+                class="modal-close"
+                type="button"
+                aria-label="Close letter"
+            >
+                ×
+            </button>
+
+            <div class="letter-paper">
+
+                <div class="letter-top-decoration">
+                    ✦
+                </div>
+
+                <p class="letter-kicker">
+                    A MESSAGE FROM
+                </p>
+
+                <h2 id="letter-name">
+                    STAFF MEMBER
+                </h2>
+
+                <div class="letter-divider"></div>
+
+                <div
+                    id="letter-body"
+                    class="letter-body"
+                >
+                    <p>
+                        Happy Birthday!
+                    </p>
+                </div>
+
+                <p
+                    id="letter-signoff"
+                    class="letter-signoff"
+                >
+                    — Someone from Escalation
+                </p>
+
+                <div class="letter-divider"></div>
+
+                <button
+                    id="letter-done"
+                    class="primary-button modal-button"
+                    type="button"
+                >
+                    CLOSE LETTER
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         TOAST
+    ========================================================== -->
+
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+    >
+        <span class="toast-symbol">✦</span>
+        <span id="toast-message">
+            Something happened.
+        </span>
+    </div>
+
+
+    <!-- =========================================================
+         SCRIPTS
+    ========================================================== -->
+
+    <script src="script.js" defer></script>
+    <script src="sounds.js" defer></script>
+
+</body>
+</html>
+```
